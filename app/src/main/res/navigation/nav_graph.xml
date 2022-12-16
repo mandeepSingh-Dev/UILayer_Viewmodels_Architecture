@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentOne">
+
+
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.example.uilayer_viewmodels_architecture.fragments.FragmentOne"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/action_fragmentOne_to_fragmentTwo"
+            app:destination="@id/fragmentTwo" />
+        <action
+            android:id="@+id/action_fragmentOne_to_fragmentThree"
+            app:destination="@id/fragmentThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.example.uilayer_viewmodels_architecture.fragments.FragmentTwo"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" >
+        <action
+            android:id="@+id/action_fragmentTwo_to_fragmentFour"
+            app:destination="@id/fragmentFour" />
+        <action
+            android:id="@+id/action_fragmentTwo_to_fragmentThree"
+            app:destination="@id/fragmentThree" />
+        <argument
+            android:name="MItem"
+            app:argType="com.example.uilayer_viewmodels_architecture.Model.MItem"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.example.uilayer_viewmodels_architecture.fragments.FragmentThree"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three" >
+        <action
+            android:id="@+id/action_fragmentThree_to_fragmentFour"
+            app:destination="@id/fragmentFour" />
+        <action
+            android:id="@+id/action_fragmentThree_to_fragmentSix"
+            app:destination="@id/fragmentSix" />
+        <argument
+            android:name="MItem"
+            app:nullable="false"
+            app:argType="com.example.uilayer_viewmodels_architecture.Model.MItem"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:name="com.example.uilayer_viewmodels_architecture.fragments.FragmentFour"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four" >
+        <action
+            android:id="@+id/action_fragmentFour_to_fragmentFive"
+            app:destination="@id/fragmentFive" />
+        <action
+            android:id="@+id/action_fragmentFour_to_fragmentFive2"
+            app:destination="@id/fragmentFive" />
+        <action
+            android:id="@+id/action_fragmentFour_to_fragmentSix"
+            app:destination="@id/fragmentSix" />
+        <argument
+            android:name="MItem"
+            app:argType="com.example.uilayer_viewmodels_architecture.Model.MItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFive"
+        android:name="com.example.uilayer_viewmodels_architecture.fragments.FragmentFive"
+        android:label="fragment_five"
+        tools:layout="@layout/fragment_five" >
+        <action
+            android:id="@+id/action_fragmentFive_to_fragmentOne"
+            app:destination="@id/fragmentOne" />
+        <argument
+            android:name="MItem"
+            app:argType="com.example.uilayer_viewmodels_architecture.Model.MItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSix"
+        android:name="com.example.uilayer_viewmodels_architecture.fragments.FragmentSix"
+        android:label="fragment_six"
+        tools:layout="@layout/fragment_six" >
+        <action
+            android:id="@+id/action_fragmentSix_to_fragmentFive"
+            app:destination="@id/fragmentFive" />
+        <action
+            android:id="@+id/action_fragmentSix_to_fragmentOne"
+            app:destination="@id/fragmentOne" />
+        <argument
+            android:name="MItem"
+            app:argType="com.example.uilayer_viewmodels_architecture.Model.MItem" />
+    </fragment>
+</navigation>
